@@ -1,6 +1,6 @@
-\include "gonville.ily"
-\include "roman_numeral_analysis_tool.ily"
-\include "size.ily"
+\include "../styles/gonville.ily"
+\include "../styles/roman_numeral_analysis_tool.ily"
+\include "../styles/size.ily"
 \version "2.18.2"
 
 melody = \relative c' {
