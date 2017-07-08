@@ -17,5 +17,7 @@ Here is an example run of the script:
 And if you want to compile all in a directory:
 
 ```bash
-./compile_all.sh ./blog/circle_of_fifths/snippet --outputdir ../website/static/img/ --preview
+./compile_all.sh ./blog/circle_of_fifths/snippet ../website/static/img/ --preview
 ```
+
+It follows the form of `./compile.sh <input/dir> <output/dir> <optional preview flag>`
