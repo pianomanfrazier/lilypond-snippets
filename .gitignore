@@ -1,3 +1,6 @@
 .*
 !.gitignore
 temp/
+*.svg
+*.pdf
+*.png
