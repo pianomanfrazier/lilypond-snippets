@@ -12,8 +12,24 @@ lower = \relative c {
   \clef bass
   \key c \major
   \time 4/4
+  \stemUp
 
-  <e b'>4 <e a> <d a'> <d g> <c g'> <c f>
+  < e b'>4
+  < e a>
+  < d a'>
+  < d g>
+  < c g'>
+  < c f>
+}
+
+bassline = \relative c {
+  \hide Stem
+  \tweak Accidental.color #grey \tweak color #grey c4
+  \tweak Accidental.color #grey \tweak color #grey f,
+  \tweak Accidental.color #grey \tweak color #grey bes 
+  \tweak Accidental.color #grey \tweak color #grey ees,
+  \tweak Accidental.color #grey \tweak color #grey aes 
+  \tweak Accidental.color #grey \tweak color #grey des, 
 }
 
 harmonies = \chordmode {
@@ -26,7 +42,12 @@ harmonies = \chordmode {
     \new ChordNames {
       \harmonies
     }
-    \new Staff = "lower" \lower
+    \new Staff = "lower" {
+      <<
+        \new Voice \lower
+        \new Voice \bassline
+      >> \oneVoice
+    }
   >>
   \layout { }
 }

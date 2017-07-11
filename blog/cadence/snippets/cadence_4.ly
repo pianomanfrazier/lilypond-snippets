@@ -1,19 +1,18 @@
 \version "2.18"
 
-\include "./styles/size.ily"
 \include "./styles/roman_numeral_analysis_tool.ily"
-upper = \relative c' {
+upper = \relative c'' {
   \clef treble
   \key c \major
   \time 4/4
 
-  g'16 e \tuplet 3/2 {f a c} e d c a bes8 aes16 bes? g8 f16 g 
-  | \tuplet 3/2 { e g b } c a f d e g r2 \bar "|."
+  \partial 4 <g c g'> <a d f> <\tweak Accidental.color #magenta \tweak color
+  #magenta aes c ees> <g c e> <g b f'> <g c e>2
 }
 
 bassline = \relative c {
   \clef bass
-  <f c' e>2 <f b e> | <e b' d>1 \bar "|."
+  \partial 4 e4 f fis g g, c2
 }
 
 analysis = \lyricmode {
@@ -22,19 +21,22 @@ analysis = \lyricmode {
   \set stanza  = #"C:"
   % For bare Roman numerals, \rN simply outputs the string.
   %\markup \rN { I }
-  \markup \rN { ii min9 }
-  \markup \rN { V 13 sharp9}
-  \markup \rN { I maj9 }
+  \markup \rN { I 6 } 
+  \markup \rN { ii 6 5 } 
+  \markup \rN { Gr+6 } 
+  \markup \rN { I 6 4 } 
+  \markup \rN { V 7 }
+  I
 }
 
 \score {
   \new PianoStaff = "piano" <<
-    \new Staff = "upper" \upper
-    \new Voice = "lower" \bassline
+    \new Voice = "upper" \upper
+    \new Voice = "bass" \bassline
     \new Lyrics \with {
       % to control distance of analysis from staff
       \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'((basic-distance . 6.5))
-    } \lyricsto "lower" { \analysis }
+    } \lyricsto "bass" { \analysis }
   >>
   \layout {
     \context {
