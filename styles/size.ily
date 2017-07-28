@@ -3,6 +3,7 @@
 
 \paper {
     #(set-paper-size "my size")
+    indent = 0
 }
 %a5 is a half sheet
 %\paper {
