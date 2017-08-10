@@ -6,7 +6,9 @@ upper = \relative c' {
   \key c \major
   \time 4/4
 
-  <f c'> <f b> <e b'>2 <ees bes'>4 <ees? a> <d a'>2 <des aes'>4 <des? g> <c g'>2
+  <c f a> <b f' a> <b e g>2
+  <bes ees g>4 <a ees'? g> <a d f>2
+  <aes des f>4 <g des'? f> <g c ees>2
 }
 
 bassline = \relative c {
@@ -21,24 +23,34 @@ analysis = \lyricmode {
   % For bare Roman numerals, \rN simply outputs the string.
   %\markup \rN { I }
   \markup \rN { ii min7 }
-  \markup \rN { V 7 }
+  \markup \rN { V 9 }
   \markup \rN { I maj7 }
   \set stanza  = \markup { B\flat: }
   % For bare Roman numerals, \rN simply outputs the string.
   %\markup \rN { I }
   \markup \rN { ii min7 }
-  \markup \rN { V 7 }
+  \markup \rN { V 9 }
   \markup \rN { I maj7 }
   \set stanza  = \markup { A\flat: }
   % For bare Roman numerals, \rN simply outputs the string.
   %\markup \rN { I }
   \markup \rN { ii min7 }
-  \markup \rN { V 7 }
+  \markup \rN { V 9 }
   \markup \rN { I maj7 }
+}
+
+harmonies = \chordmode {
+  d4:m7 g:9 c2:maj7       
+  c4:m7 f:9 bes2:maj7     
+  bes4:m7 ees:9 aes2:maj7 
 }
 
 \score {
   \new PianoStaff = "piano" <<
+    \new ChordNames {
+      \set chordChanges = ##t
+      \harmonies
+    }
     \new Staff = "upper" \upper
     \new Voice = "lower" \bassline
     \new Lyrics \with {

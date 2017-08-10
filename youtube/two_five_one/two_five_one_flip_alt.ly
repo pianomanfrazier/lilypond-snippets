@@ -6,12 +6,12 @@ upper = \relative c' {
   \key c \major
   \time 4/4
 
-  <f c'> <f b> <e b'>2 <ees bes'>4 <ees? a> <d a'>2 <des aes'>4 <des? g> <c g'>2
+  <c f a> <b f' aes> <b e g>2
 }
 
 bassline = \relative c {
   \clef bass
-  d4 g c,2 c4 f bes,2 bes4 ees aes,2
+  d4 g c,2
 }
 
 analysis = \lyricmode {
@@ -21,19 +21,7 @@ analysis = \lyricmode {
   % For bare Roman numerals, \rN simply outputs the string.
   %\markup \rN { I }
   \markup \rN { ii min7 }
-  \markup \rN { V 7 }
-  \markup \rN { I maj7 }
-  \set stanza  = \markup { B\flat: }
-  % For bare Roman numerals, \rN simply outputs the string.
-  %\markup \rN { I }
-  \markup \rN { ii min7 }
-  \markup \rN { V 7 }
-  \markup \rN { I maj7 }
-  \set stanza  = \markup { A\flat: }
-  % For bare Roman numerals, \rN simply outputs the string.
-  %\markup \rN { I }
-  \markup \rN { ii min7 }
-  \markup \rN { V 7 }
+  \markup \rN { V f9}
   \markup \rN { I maj7 }
 }
 
