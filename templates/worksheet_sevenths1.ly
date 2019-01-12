@@ -1,4 +1,4 @@
-\include "gonville.ily"
+% \include "gonville.ily"
 \version "2.18.2"
 \header {
   title="7th Chord Figured Bass worksheet"

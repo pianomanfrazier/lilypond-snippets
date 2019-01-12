@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>Music Analysis Test</title>
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no">
+        <style>
+            .container {
+                position: relative;
+                overflow-x: auto;
+                height: 200px;
+            }
+            .music {
+            }
+            .input {
+                border: none;
+                border-bottom: 1px solid black;
+                background-color: transparent;
+                color: black;
+                padding: 0.3em 0.1em;
+                margin-right: 0.5em;
+                width: 100%;
+                position: absolute;
+                bottom: 2em;
+                opacity: 0.5;
+                transition: opacity 0.3s ease;
+                text-align: center;
+            }
+            .input-label {
+                position: absolute;
+                bottom: 1em;
+                font-size: 10px;
+                text-align: center;
+                width: 100%;
+                opacity: 0.2;
+            }
+            .input:focus {
+               opacity: 1; 
+            }
+            .input:focus ~ .highlight {
+                opacity: 1;
+            }
+            .input:focus ~ .input-label{
+                opacity: 1;
+            }
+            .input-group {
+                position: absolute;
+                height: 100%;
+                bottom: 0;
+                float: left;
+            }
+            .highlight {
+                border: 2px solid rgb(40, 133, 255);
+                background-color: rgba(40, 133, 255, 0.1);
+                width: 40px;
+                height: 133px; /* height of the image */
+                opacity: 0.1;
+                transition: opacity 0.3s ease;
+                border-radius: 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Music Analysis Test</h1>
+        <div class="container">
+            <img class="music" src="chopin.preview.svg" alt="">
+            <div class="input-container">
+                <div style="left: 20px;" class="input-group">
+                    <input class="input" id="input1" type="text">
+                    <label class="input-label" for="input1">Key</label>
+                    <div class="highlight"></div>
+                </div>
+                <div style="left: 95px;" class="input-group">
+                    <input class="input" id="input2" type="text">
+                    <label class="input-label" for="input2">Chord</label>
+                    <div class="highlight" onclick="console.log('clicked')"></div>
+                </div>
+                <div style="left: 160px;" class="input-group">
+                    <input class="input" id="input3" type="text">
+                    <label class="input-label" for="input3">Chord</label>
+                    <div class="highlight"></div>
+                </div>
+                <div style="left: 275px;" class="input-group">
+                    <input class="input" id="input4" type="text">
+                    <label class="input-label" for="input4">Figure</label>
+                    <div style="width: 128px;" class="highlight"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
