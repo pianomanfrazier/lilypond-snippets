@@ -21,3 +21,12 @@ And if you want to compile all in a directory:
 ```
 
 It follows the form of `./compile.sh <input/dir> <output/dir> <optional preview flag>`
+
+## Optimize SVG for the web
+
+Install svgo from npm and use the provided svgo.yml. The output is aggressive and will only work for embedded SVG images in HTML.
+
+```bash
+npm i -g svgo
+svgo --config=svgo.yml piano_score.svg -o piano_score.min.svg
+```

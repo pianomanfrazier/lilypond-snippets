@@ -1,4 +1,3 @@
-% \include "../styles/gonville.ily"
 \version "2.18.2"
 
 upper = \relative c'' {
